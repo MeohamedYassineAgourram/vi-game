@@ -140,7 +140,7 @@ function showLetter(stage) {
     Game.done = new Set();
     // This experience is embedded from the invitation page. A replay begins
     // at that landing page instead of returning to the retired purple gate.
-    if (window.top && window.top !== window) window.top.location.assign("/");
-    else window.location.assign("/");
+    if (window.top && window.top !== window) window.top.location.assign("../");
+    else window.location.assign("../");
   };
 }

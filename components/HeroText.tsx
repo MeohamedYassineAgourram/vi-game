@@ -14,7 +14,7 @@ const reveal = {
 
 export default function HeroText() {
   const explore = () => document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
-  const beginJourney = () => window.location.assign("/journey");
+  const beginJourney = () => window.location.assign(`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/play`);
 
   return (
     <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex min-h-[100svh] flex-col items-center px-5 pt-[10vh] text-center sm:pt-[9vh]">

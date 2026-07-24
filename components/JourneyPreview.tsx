@@ -11,6 +11,8 @@ const worlds = [
 ];
 
 export default function JourneyPreview() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   return (
     <section id="about" className="relative z-30 bg-[#fbfaf6] px-5 py-24 sm:px-8 md:py-36">
       <div className="mx-auto max-w-6xl">
@@ -23,7 +25,7 @@ export default function JourneyPreview() {
           {worlds.map((world, index) => (
             <motion.article key={world.number} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.8, delay: index * 0.12 }} className="group overflow-hidden rounded-[2rem] bg-white p-4 shadow-[0_12px_35px_rgba(40,54,56,0.06)]">
               <div className="relative h-60 overflow-hidden rounded-[1.5rem] bg-[#dfeef0]">
-                <div className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105" style={{ backgroundImage: `url('${world.image}')` }} />
+                <div className="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-105" style={{ backgroundImage: `url('${basePath}${world.image}')` }} />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1c3235]/35 via-transparent to-white/10" />
                 <span className="absolute left-6 top-6 text-[10px] font-bold tracking-[0.25em] text-[#506368]/60">{world.number}</span>
               </div>
