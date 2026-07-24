@@ -37,7 +37,7 @@ jobs:
         run: npm run build
         env:
           GITHUB_ACTIONS: "true"
-          NEXT_PUBLIC_BASE_PATH: "/vi-shengri"
+          NEXT_PUBLIC_BASE_PATH: "/vi-game"
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
