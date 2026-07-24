@@ -45,6 +45,9 @@ img{max-width:100%;display:block}
 .backdrop{position:absolute;inset:0;background-size:contain;background-position:center;background-repeat:no-repeat;
   opacity:0;transform:none;transition:opacity 1s ease;filter:saturate(1.05)}
 .backdrop.on{opacity:1;transform:none}
+/* Realm declarations below use the `background` shorthand. Reapply this after
+   those declarations so supplied scene images are always shown in full. */
+body[data-world] .backdrop{background-size:100% 100% !important;background-position:center !important;background-repeat:no-repeat !important}
 .backdrop-scrim{position:absolute;inset:0;background:
   linear-gradient(180deg, rgba(6,9,14,.7) 0%, rgba(6,9,14,.42) 32%, rgba(6,9,14,.66) 100%),
   radial-gradient(90% 70% at 50% 42%, transparent 30%, rgba(6,9,14,.6) 100%)}
