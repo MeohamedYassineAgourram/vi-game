@@ -55,9 +55,11 @@ Game.games.chocobi = (stage, c) => {
     removeEventListener("keydown", kd); removeEventListener("keyup", ku);
   };
 
+  // Keep this challenge lively: a shard now crosses the play area in roughly
+  // two seconds instead of lingering for several seconds on large displays.
   const spawn = () => items.push({
     x: .08 + Math.random() * .84, y: -.08,
-    v: .0034 + Math.random() * .0032 + caught * .00012,
+    v: .0068 + Math.random() * .0048 + caught * .00018,
     r: 18, rot: Math.random() * 6, vr: (Math.random() - .5) * .09,
     bad: Math.random() < .28
   });
@@ -68,7 +70,8 @@ Game.games.chocobi = (stage, c) => {
     if (keys.ArrowLeft)  bx -= .018;
     if (keys.ArrowRight) bx += .018;
     bx = clamp(bx, 0, 1);
-    if (t % 34 === 0) spawn();
+    // Shorter gap between drops keeps the objective moving without crowding it.
+    if (t % 22 === 0) spawn();
 
     ctx.clearRect(0, 0, W, H);
     const px = bx * W, py = H - 22 - BH;
